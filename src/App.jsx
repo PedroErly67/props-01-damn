@@ -20,6 +20,12 @@ import CartaoAluno from './components/CartaoAluno.jsx'
 import Produto from './components/Produto.jsx'
 import Botao from './components/Botao.jsx'
 
+const turma = [
+  { id: 1, nome: 'Bia',   curso: 'Front-end', idade: 18, foto: 'https://i.pravatar.cc/150?img=5'  },
+  { id: 2, nome: 'Davi',  curso: 'Back-end',  idade: 19, foto: 'https://i.pravatar.cc/150?img=8'  },
+  { id: 3, nome: 'Luana', curso: 'Mobile',    idade: 17, foto: 'https://i.pravatar.cc/150?img=9'  },
+]
+
 function App() {
   return (
     <div className="container">
@@ -47,7 +53,7 @@ function App() {
 
       {/* ============================================================
           PARTE 2 - CartaoAluno (arquivo: components/CartaoAluno.jsx)
-          ============================================================
+          ================================Z============================
           ATENÇÃO: texto vai entre aspas  -> curso="Front-end"
                    número vai entre chaves -> idade={17}              */}
       <section className="parte">
@@ -94,12 +100,15 @@ function App() {
           {/* ✏️ TAREFA 3.4
               Este produto NÃO envia a prop emPromocao.
               Depois de fazer a TAREFA 3.1, o selo aparece ou não? Por quê?
-              Resposta: ...                                                */}
+              Resposta: não, pois nao tem a variavel "emPromocao" depois do preco.*/}
           <Produto nome="Monitor 24''" preco={899} />
-
           {/* ✏️ TAREFA 3.5
               Crie um produto em promoção usando a forma curta:
               <Produto nome="..." preco={...} emPromocao />                */}
+
+          <Produto nome="abububu" preco={670} emPromocao={true}/>
+
+
         </div>
       </section>
 
@@ -118,9 +127,16 @@ function App() {
             Excluir
           </Botao>
 
+          
+
           {/* ✏️ TAREFA 4.3
               Crie um botão VERDE com o texto "Enviar" que, ao ser clicado,
               mostre um alert com a mensagem "Formulário enviado!".        */}
+
+          <Botao cor="verde" aoClicar={() => alert('Você clicou em enviar!')}>
+            Enviar
+          </Botao>
+
         </div>
       </section>
 
@@ -130,8 +146,8 @@ function App() {
           Na vida real os dados quase nunca são escritos "na mão".
           Eles vêm de uma lista (array), por exemplo, de uma API.
 
-          ✏️ TAREFA 5 (desafio)
-            1. Crie, ACIMA do "function App()", uma constante:
+          ✏️ TAREFA 5 (desafumaio)
+            1. Crie, ACIMA do "function App()",  constante:
 
                  const turma = [
                    { id: 1, nome: 'Bia',   curso: 'Front-end', idade: 18, foto: 'https://i.pravatar.cc/150?img=5'  },
@@ -142,15 +158,14 @@ function App() {
             2. Aqui embaixo, use turma.map() para criar um <CartaoAluno />
                para cada aluno, passando as props a partir do objeto:
 
-                 {turma.map((aluno) => (
+                */} {turma.map((aluno) => (
                    <CartaoAluno
                      key={aluno.id}
                      nome={aluno.nome}
-                     ...complete as outras props...
                    />
                  ))}
 
-            Por que precisa da prop "key"? Pesquise e responda:
+          {/*  Por que precisa da prop "key"? Pesquise e responda:
             Resposta: ...
           ============================================================ */}
       <section className="parte">

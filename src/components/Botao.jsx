@@ -21,15 +21,17 @@
 //        onClick={aoClicar()}    ❌ errado (executa na hora!)
 // =====================================================================
 
+import { Children } from "react"
+
 // ✏️ TAREFA 4.1
 // Receba as props: children, cor e aoClicar
-function Botao() {
+function Botao({children, cor, aoClicar}) {
   return (
     // ✏️ TAREFA 4.2
     //  a) Troque "azul" pela prop cor  ->  className={'botao ' + cor}
     //  b) Adicione  onClick={aoClicar}  no <button>
     //  c) Troque o texto fixo "Botão" por {children}
-    <button className="botao azul">Botão</button>
+    <button className={'botao' + cor } onClick={aoClicar}>{children}</button>
   )
 }
 

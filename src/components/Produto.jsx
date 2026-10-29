@@ -21,13 +21,15 @@
 // ✏️ TAREFA 3.1
 // Adicione a prop "emPromocao" na lista abaixo, com valor padrão false.
 //   Ex.: { nome, preco, emPromocao = false }
-function Produto({ nome, preco }) {
+function Produto({ nome, preco, emPromocao=false }) {
   return (
     // ✏️ TAREFA 3.3 (desafio)
     // Faça a className mudar conforme a prop:
     //   se emPromocao for true -> "produto promocao"
     //   senão                  -> "produto"
     // Dica (operador ternário):  className={emPromocao ? '...' : '...'}
+
+    
     <div className="produto">
       <h3>{nome}</h3>
 
@@ -37,7 +39,8 @@ function Produto({ nome, preco }) {
       {/* ✏️ TAREFA 3.2
           Mostre o selo abaixo SOMENTE se emPromocao for true.
           Use o operador &&  (veja a explicação no topo do arquivo).     */}
-      <span className="selo">PROMOÇÃO</span>
+          
+      {emPromocao && <span className="selo">PROMOÇÃO</span>}
     </div>
   )
 }
